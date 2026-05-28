@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/chart"
+        android:title="Dashboard"/>
+
+    <item
+        android:id="@+id/nav_products"
+        android:icon="@drawable/inventory"
+        android:title="Produk"/>
+
+    <item
+        android:id="@+id/nav_create"
+        android:icon="@drawable/add"
+        android:title="Buat"/>
+
+    <item
+        android:id="@+id/nav_transactions"
+        android:icon="@drawable/receipt"
+        android:title="Transaksi"/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/profile"
+        android:title="Profile"/>
+
+</menu>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".recyclerKategori">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/txtKategori"
+            android:layout_marginEnd="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+
+
+            app:backgroundTint="@color/black"
+
+            android:textSize="16sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            app:cornerRadius="20dp"
+            android:paddingVertical="4dp"
+            app:elevation="0dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editButton"
+            android:layout_marginEnd="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/edit"
+            app:iconGravity="textTop"
+            app:iconPadding="0dp"
+            app:cornerRadius="20dp"
+            app:iconSize="16sp"
+            android:textColor="@color/white"
+
+
+            app:backgroundTint="@color/aksen"
+
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:paddingVertical="0dp"
+            android:paddingHorizontal="8dp"
+            app:elevation="0dp"/>
+    </LinearLayout>
+</FrameLayout>
