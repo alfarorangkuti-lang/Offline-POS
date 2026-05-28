@@ -5,8 +5,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Toast;
+import com.example.practinepos.data.AppDatabase;
+import com.example.practinepos.data.ItemEntity;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,6 +70,25 @@ public class InsertKategoriFragment extends Fragment {
             ((HomeActivity) requireActivity()).replaceFragment(new ProductsFragment());
             ((HomeActivity) requireActivity()).showBottomNav(true);
         });
+        TextInputEditText kategori = view.findViewById(R.id.etInputKategori);
+        MaterialButton btnSimpan = view.findViewById(R.id.btnSimpanKategori);
+
+        btnSimpan.setOnClickListener(v -> {
+            String valueInputKategori = kategori.getText().toString();
+            submitInsert(valueInputKategori);
+            kategori.setText("");
+        });
+
         return view;
+    }
+
+    protected void submitInsert(String nama){
+        if (Objects.equals(nama, "")){
+            Toast.makeText(requireContext(), "Isi input kategori", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        AppDatabase.getInstance(getContext()).itemDao().insert(new ItemEntity(nama));
+        Toast.makeText(requireContext(), "Berhasil!", Toast.LENGTH_LONG).show();
+
     }
 }

@@ -112,7 +112,7 @@
                         app:boxCornerRadiusBottomEnd="18dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/inputKategori"
+                            android:id="@+id/etInputKategori"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
@@ -128,7 +128,7 @@
 
                     <!-- BUTTON -->
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnSimpan"
+                        android:id="@+id/btnSimpanKategori"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 

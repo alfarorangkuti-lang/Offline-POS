@@ -5,16 +5,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/txtKategori"
         app:cornerRadius="20dp"
         android:backgroundTint="@color/aksen"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kategori"
         android:textAllCaps="false"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDeleteKategori"
+        android:layout_marginEnd="8dp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginRight="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/delete"
+        app:iconTint="@color/white"
+        app:iconGravity="textTop"
+        app:iconSize="18dp"
+        app:iconPadding="0dp"
+        android:textAllCaps="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:insetBottom="0dp"
+        android:insetTop="0dp"
+        android:paddingVertical="0dp"/>
 
 </LinearLayout>

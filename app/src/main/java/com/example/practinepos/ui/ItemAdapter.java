@@ -4,18 +4,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.practinepos.R;
 import com.example.practinepos.data.ItemEntity;
+import com.google.android.material.button.MaterialButton;
+import com.example.practinepos.data.AppDatabase;
 
 import java.util.List;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
     List<ItemEntity> list;
+
 
     public ItemAdapter(List<ItemEntity> list){
         this.list = list;
@@ -43,6 +47,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
         ItemEntity item = list.get(position);
 
         holder.txtKategori.setText(item.getName());
+
+        holder.btnDelete.setOnClickListener(v -> {
+            int id = item.getId();
+            holder.database.itemDao().delete(item);
+            list.remove(position);
+
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, list.size());
+            Toast.makeText(holder.itemView.getContext(), String.valueOf(id), Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -53,11 +67,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtKategori;
+        MaterialButton btnDelete;
+        AppDatabase database;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtKategori = itemView.findViewById(R.id.txtKategori);
+            btnDelete = itemView.findViewById(R.id.btnDeleteKategori);
+            database = AppDatabase.getInstance(itemView.getContext());
+            
         }
     }
 }
